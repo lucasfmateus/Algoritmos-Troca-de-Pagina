@@ -6,17 +6,16 @@ namespace MemoriaVirtual.Model
 {
     public class Acess
     {
-        public Acess()
+        public static Acess CreateFrom(string page, string action)
         {
-        }
-
-        public Acess(string page, string action)
-        {
-            Action = action;
-            Page = page;
-            R = 1;
-            M = action == "E" ? 1 : 0;
-            Class = GetNumberFormBinary(R.ToString() + M.ToString());
+            return new Acess()
+            {
+                Action = action,
+                Page = page,
+                R = 1,
+                M = action == "E" ? 1 : 0,
+                Class = GetNumberFormBinary(R.ToString() + M.ToString()),
+            };
         }
 
 

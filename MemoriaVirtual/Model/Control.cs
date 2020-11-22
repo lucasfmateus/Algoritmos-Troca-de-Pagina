@@ -15,7 +15,6 @@ namespace MemoriaVirtual.Model
         protected string OldValue { get; set; }
         protected int TradingPostion { get; set; }
 
-
         public void Reset()
         {
             SizeAt = 0;

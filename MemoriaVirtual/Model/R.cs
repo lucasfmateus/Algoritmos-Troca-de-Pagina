@@ -10,10 +10,4 @@ namespace MemoriaVirtual.Model
         public List<T> Value { get; set; } = new List<T>();
         public int Reset { get; set; } = 0;
     }
-
-    public class RM
-    {
-        public int R { get; set; }
-        public int M { get; set; }
-    }
 }

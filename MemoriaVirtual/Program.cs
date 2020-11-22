@@ -12,7 +12,6 @@ namespace MemoriaVirtual
     {
         static void Main(string[] args)
         {
-
             var entradas = System.IO.File.ReadAllLines(@"entrada.txt");
 
             #region FIFO
@@ -23,14 +22,12 @@ namespace MemoriaVirtual
 
             #endregion FIFO
 
-
             #region OTIMO
             //var otimo = new OTIMOController(new OTIMO());
 
             //otimo.Run(entradas.ToList());
 
             #endregion OTIMO
-
 
             #region LRU
             //var lru = new LRUController(new LRU());
@@ -48,19 +45,18 @@ namespace MemoriaVirtual
 
             #region NRU
             var nru = new NRUController(new NRUService());
-
             var listAcess = new List<Acess>()
             {
-                new Acess(entradas[0], "E"),
-                new Acess(entradas[1], "L"),
-                new Acess(entradas[2], "L"),
-                new Acess(entradas[3], "L"),
-                new Acess(entradas[4], "L"),
-                new Acess(entradas[5], "L"),
-                new Acess(entradas[6], "L"),
-                new Acess(entradas[7], "L"),
-                new Acess(entradas[8], "L"),
-                new Acess(entradas[8], "E"),
+                Acess.CreateFrom(entradas[0], "E"),
+                Acess.CreateFrom(entradas[1], "L"),
+                Acess.CreateFrom(entradas[2], "L"),
+                Acess.CreateFrom(entradas[3], "L"),
+                Acess.CreateFrom(entradas[4], "L"),
+                Acess.CreateFrom(entradas[5], "L"),
+                Acess.CreateFrom(entradas[6], "L"),
+                Acess.CreateFrom(entradas[7], "L"),
+                Acess.CreateFrom(entradas[8], "L"),
+                Acess.CreateFrom(entradas[8], "E"),
             };
 
             nru.Run(listAcess);
