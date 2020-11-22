@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MemoriaVirtual.Controllers.Base
 {
-    public abstract class TradingController<T> where T : Manager
+    public abstract class TradingController<T> where T : ManagementService
     {
         protected T tradingService { get; set; }
 

@@ -7,9 +7,9 @@ using System.Text;
 
 namespace MemoriaVirtual.Controllers
 {
-    public class RelogioController : TradingController<Relogio>
+    public class RelogioController : TradingController<RelogioService>
     {
-        public RelogioController(Relogio service) : base(service)
+        public RelogioController(RelogioService service) : base(service)
         {
         }
 

@@ -7,9 +7,9 @@ using System.Text;
 
 namespace MemoriaVirtual.Controllers
 {
-    public class LRUController : TradingController<LRU>
+    public class LRUController : TradingController<LRUService>
     {
-        public LRUController(LRU service) : base(service)
+        public LRUController(LRUService service) : base(service)
         {
         }
 

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MemoriaVirtual.Services
 {
-	public class Manager : Control
+	public class ManagementService : Control
 	{
         public List<Page> Quadros { get; set; } = new List<Page>();
 

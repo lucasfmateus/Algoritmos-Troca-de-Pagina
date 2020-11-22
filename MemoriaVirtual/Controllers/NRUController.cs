@@ -8,9 +8,9 @@ using System.Text;
 
 namespace MemoriaVirtual.Controllers
 {
-    public class NRUController : TradingController<NRU>
+    public class NRUController : TradingController<NRUService>
     {
-        public NRUController(NRU service) : base(service)
+        public NRUController(NRUService service) : base(service)
         {
         }
 

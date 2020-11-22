@@ -1,14 +1,13 @@
-﻿using MemoriaVirtual.Interface;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace MemoriaVirtual.Services
 {
-    public class OTIMO : Manager
+    public class OTIMOService : ManagementService
     {
-        public OTIMO()
+        public OTIMOService()
         {
             Initialize();
         }

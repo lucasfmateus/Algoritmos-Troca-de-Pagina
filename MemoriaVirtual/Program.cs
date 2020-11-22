@@ -47,7 +47,7 @@ namespace MemoriaVirtual
             #endregion Relogio
 
             #region NRU
-            var nru = new NRUController(new NRU());
+            var nru = new NRUController(new NRUService());
 
             var listAcess = new List<Acess>()
             {

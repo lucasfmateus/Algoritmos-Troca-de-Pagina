@@ -1,5 +1,4 @@
-﻿using MemoriaVirtual.Interface;
-using MemoriaVirtual.Model;
+﻿using MemoriaVirtual.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +6,13 @@ using System.Text;
 
 namespace MemoriaVirtual.Services
 {
-    public class Relogio : Manager
+    public class RelogioService : ManagementService
     {
         private R<int> R = new R<int>();
 
         public List<string> FilaControle = new List<string>();
 
-        public Relogio()
+        public RelogioService()
         {
             Initialize();
         }

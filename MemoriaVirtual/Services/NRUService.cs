@@ -1,5 +1,4 @@
-﻿using MemoriaVirtual.Interface;
-using MemoriaVirtual.Model;
+﻿using MemoriaVirtual.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +6,12 @@ using System.Text;
 
 namespace MemoriaVirtual.Services
 {
-    public class NRU : Manager
+    public class NRUService : ManagementService
     {
 
         public List<Acess> FilaControle = new List<Acess>();
 
-        public NRU()
+        public NRUService()
         {
             Initialize();
         }

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MemoriaVirtual.Controllers
 {
-    public class FIFOController : TradingController<FIFO>
+    public class FIFOController : TradingController<FIFOService>
     {
-        public FIFOController(FIFO service) : base(service)
+        public FIFOController(FIFOService service) : base(service)
         {
         }
 

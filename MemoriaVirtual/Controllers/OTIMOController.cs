@@ -7,9 +7,9 @@ using System.Text;
 
 namespace MemoriaVirtual.Controllers
 {
-    public class OTIMOController : TradingController<OTIMO>
+    public class OTIMOController : TradingController<OTIMOService>
     {
-        public OTIMOController(OTIMO service) : base(service)
+        public OTIMOController(OTIMOService service) : base(service)
         {
         }
 

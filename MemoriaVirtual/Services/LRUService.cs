@@ -1,12 +1,11 @@
-﻿using MemoriaVirtual.Interface;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace MemoriaVirtual.Services
 {
-    public class LRU : Manager
+    public class LRUService : ManagementService
     {
         public List<List<string>> Matriz = new List<List<string>>();
 
@@ -19,7 +18,7 @@ namespace MemoriaVirtual.Services
             Memory.ForEach(x => Matriz.Add(l));
         }
 
-        public LRU()
+        public LRUService()
         {
             Initialize();
         }
