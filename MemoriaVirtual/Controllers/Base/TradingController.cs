@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MemoriaVirtual.Interface
+namespace MemoriaVirtual.Controllers.Base
 {
     public abstract class TradingController<T> where T : Manager
     {

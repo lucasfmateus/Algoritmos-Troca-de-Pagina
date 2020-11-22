@@ -1,4 +1,4 @@
-﻿using MemoriaVirtual.Interface;
+﻿using MemoriaVirtual.Controllers.Base;
 using MemoriaVirtual.Model;
 using MemoriaVirtual.Services;
 using System;
