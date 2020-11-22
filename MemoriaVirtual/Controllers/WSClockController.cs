@@ -7,9 +7,9 @@ using System.Text;
 
 namespace MemoriaVirtual.Controllers
 {
-    public class OTIMOController : TradingController<OTIMOService>
+    public class WSClockController : TradingController<WSClockService>
     {
-        public OTIMOController(OTIMOService service) : base(service)
+        public WSClockController(WSClockService service) : base(service)
         {
         }
 
@@ -32,6 +32,5 @@ namespace MemoriaVirtual.Controllers
         {
             throw new NotImplementedException();
         }
-        
     }
 }

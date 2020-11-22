@@ -9,23 +9,23 @@ namespace MemoriaVirtual.Controllers.Base
 {
     public abstract class TradingController<T> where T : ManagementService
     {
-        protected T tradingService { get; set; }
+        protected T service { get; set; }
 
         public TradingController(T service)
         {
-            this.tradingService = service;
+            this.service = service;
         }
 
         public virtual void Run(List<string> entradas)
         {
-            tradingService.ExecutionList = entradas.ToList();
+            service.ExecutionList = entradas.ToList();
 
             foreach (var item in entradas)
             {
                 Add(item);
             }
 
-            tradingService.ViewLog();
+            service.ViewLog();
         }
         public abstract void Add(string page);
         public abstract List<Page> GetQuadros();

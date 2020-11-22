@@ -16,14 +16,14 @@ namespace MemoriaVirtual.Controllers
 
         public void Run(List<Acess> entradas)
         {
-            tradingService.ExecutionList = entradas.Select(x => x.Page).ToList();
+            service.ExecutionList = entradas.Select(x => x.Page).ToList();
 
             foreach (var item in entradas)
             {
                 Add(item);
             }
 
-            tradingService.ViewLog();
+            service.ViewLog();
         }
         public override void Add(string page)
         {
@@ -31,7 +31,7 @@ namespace MemoriaVirtual.Controllers
         }
         public void Add(Acess page)
         {
-            tradingService.AddNewPage(page);
+            service.AddNewPage(page);
         }
 
         public override List<string> GetLog()

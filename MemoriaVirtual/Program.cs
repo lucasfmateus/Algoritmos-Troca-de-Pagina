@@ -15,32 +15,23 @@ namespace MemoriaVirtual
             var entradas = System.IO.File.ReadAllLines(@"entrada.txt");
 
             #region FIFO
-
-            //var fifo = new FIFOController(new FIFO());
-
+            //var fifo = new FIFOController(new FIFOService());
             //fifo.Run(entradas.ToList());
-
             #endregion FIFO
 
             #region OTIMO
-            //var otimo = new OTIMOController(new OTIMO());
-
+            //var otimo = new OTIMOController(new OTIMOService());
             //otimo.Run(entradas.ToList());
-
             #endregion OTIMO
 
             #region LRU
-            //var lru = new LRUController(new LRU());
-
+            //var lru = new LRUController(new LRUService());
             //lru.Run(entradas.ToList());
-
             #endregion LRU
 
             #region Relogio
-            //var Relogio = new RelogioController(new Relogio());
-
+            //var Relogio = new RelogioController(new RelogioService());
             //Relogio.Run(entradas.ToList());
-
             #endregion Relogio
 
             #region NRU
@@ -58,10 +49,13 @@ namespace MemoriaVirtual
                 Acess.CreateFrom(entradas[8], "L"),
                 Acess.CreateFrom(entradas[8], "E"),
             };
-
             nru.Run(listAcess);
-
             #endregion NRU
+
+            #region WSClock
+            var wsClock = new WSClockController(new WSClockService());
+            wsClock.Run(entradas.ToList());
+            #endregion WSClock
         }
     }
 }

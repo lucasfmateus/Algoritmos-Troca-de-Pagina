@@ -15,7 +15,7 @@ namespace MemoriaVirtual.Controllers
 
         public override void Add(string page)
         {
-            tradingService.AddNewPage(page);
+            service.AddNewPage(page);
         }
 
         public override List<string> GetLog()

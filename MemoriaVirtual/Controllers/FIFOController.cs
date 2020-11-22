@@ -16,22 +16,22 @@ namespace MemoriaVirtual.Controllers
 
         public override void Add(string page)
         {
-            tradingService.AddNewPage(page);
+            service.AddNewPage(page);
         }
 
         public override List<Page> GetQuadros()
         {
-            return tradingService.Quadros;
+            return service.Quadros;
         }
 
         public override List<string> GetMemory()
         {
-            return tradingService.Memory;
+            return service.Memory;
         }
 
         public override List<string> GetLog()
         {
-            return tradingService.Log;
+            return service.Log;
         }
 
         public override bool Equals(object obj)
