@@ -16,11 +16,9 @@ namespace MemoriaVirtual.Services
         {
             NewPage(() =>
             {
-                OldValue = SecondChance();
-                TradingPostion = Memory.IndexOf(OldValue);
-                Memory[TradingPostion] = NewValue;
+
             },
-            page)
+            page);
         }
     }
 }
