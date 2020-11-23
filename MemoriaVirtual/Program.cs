@@ -35,7 +35,24 @@ namespace MemoriaVirtual
             #endregion Relogio
 
             #region NRU
-            var nru = new NRUController(new NRUService());
+            //var nru = new NRUController(new NRUService());
+            //var listAcess = new List<Acess>()
+            //{
+            //    Acess.CreateFrom(entradas[0], "E"),
+            //    Acess.CreateFrom(entradas[1], "L"),
+            //    Acess.CreateFrom(entradas[2], "L"),
+            //    Acess.CreateFrom(entradas[3], "L"),
+            //    Acess.CreateFrom(entradas[4], "L"),
+            //    Acess.CreateFrom(entradas[5], "L"),
+            //    Acess.CreateFrom(entradas[6], "L"),
+            //    Acess.CreateFrom(entradas[7], "L"),
+            //    Acess.CreateFrom(entradas[8], "L"),
+            //    Acess.CreateFrom(entradas[8], "E"),
+            //};
+            //nru.Run(listAcess);
+            #endregion NRU
+
+            #region WSClock
             var listAcess = new List<Acess>()
             {
                 Acess.CreateFrom(entradas[0], "E"),
@@ -49,12 +66,8 @@ namespace MemoriaVirtual
                 Acess.CreateFrom(entradas[8], "L"),
                 Acess.CreateFrom(entradas[8], "E"),
             };
-            nru.Run(listAcess);
-            #endregion NRU
-
-            #region WSClock
-            var wsClock = new WSClockController(new WSClockService());
-            wsClock.Run(entradas.ToList());
+            var wsClock = new WSClockController(new WSClockService(listAcess));
+            wsClock.Run(listAcess.ToList());
             #endregion WSClock
         }
     }

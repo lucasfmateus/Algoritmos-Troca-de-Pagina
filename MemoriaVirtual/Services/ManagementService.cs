@@ -21,9 +21,9 @@ namespace MemoriaVirtual.Services
 
         public List<string> Memory = new List<string>
         {
-            "A1",
-            "A2",
-            "A3"
+            "0",
+            "0",
+            "0"
         };
 
         public void Update()

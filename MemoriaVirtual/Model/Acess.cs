@@ -8,13 +8,15 @@ namespace MemoriaVirtual.Model
     {
         public static Acess CreateFrom(string page, string action)
         {
+            var r = 1;
+            var m = action == "E" ? 1 : 0;
             return new Acess()
             {
                 Action = action,
                 Page = page,
-                R = 1,
-                M = action == "E" ? 1 : 0,
-                Class = GetNumberFormBinary(R.ToString() + M.ToString()),
+                R = r,
+                M = m,
+                Class = GetNumberFormBinary(r.ToString() + m.ToString()),
             };
         }
 
@@ -39,6 +41,18 @@ namespace MemoriaVirtual.Model
         public void MovM()
         {
             M = 1;
+            Class = GetNumberFormBinary(R.ToString() + M.ToString());
+        }
+
+        public void SetM(int value)
+        {
+            M = value;
+            Class = GetNumberFormBinary(R.ToString() + M.ToString());
+        }
+
+        public void SetR(int value)
+        {
+            R = value;
             Class = GetNumberFormBinary(R.ToString() + M.ToString());
         }
     }
