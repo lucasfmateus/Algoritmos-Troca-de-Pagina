@@ -12,62 +12,175 @@ namespace MemoriaVirtual
     {
         static void Main(string[] args)
         {
-            var entradas = System.IO.File.ReadAllLines(@"entrada.txt");
 
             #region FIFO
-            //var fifo = new FIFOController(new FIFOService());
-            //fifo.Run(entradas.ToList());
+
+            Console.WriteLine(" --------------------- FIFO -------------------------");
+
+            var fifoMemory = new List<string>
+            {
+                "0",
+                "0",
+                "0"
+            };
+
+            var fifoList = new List<string>
+            {
+                "A2",
+                "A3",
+                "B2",
+                "B3",
+                "A1",
+                "A2",
+                "A3",
+                "B2",
+                "B1",
+                "B3",
+                "B2",
+                "A3",
+            };
+
+            var fifo = new FIFOController(new FIFOService(fifoMemory.ToList()));
+            fifo.Run(fifoList.ToList());
             #endregion FIFO
 
             #region OTIMO
-            //var otimo = new OTIMOController(new OTIMOService());
-            //otimo.Run(entradas.ToList());
+            Console.WriteLine(" --------------------- OTIMO -------------------------");
+
+            var otmMemory = new List<string>
+            {
+                "B1",
+                "0",
+                "0"
+            };
+
+            var otmList = new List<string>
+            {
+                "A2",
+                "A3",
+                "B2",
+                "B3",
+                "A1",
+                "A2",
+                "A3",
+                "B2",
+                "B1",
+                "B3",
+                "B2",
+                "A3",
+            };
+
+            var otimo = new OTIMOController(new OTIMOService(otmMemory.ToList()));
+            otimo.Run(otmList.ToList());
             #endregion OTIMO
 
             #region LRU
-            //var lru = new LRUController(new LRUService());
-            //lru.Run(entradas.ToList());
+            Console.WriteLine(" --------------------- LRU -------------------------");
+
+            var lruMemory = new List<string>
+            {
+                "0",
+                "0",
+                "0"
+            };
+
+            var lruList = new List<string>
+            {
+                "A1",
+                "A2",
+                "A3",
+                "B2",
+                "B3",
+                "A1",
+                "B2",
+                "A3",
+                "A2",
+                "A1",
+            };
+
+            var lru = new LRUController(new LRUService(lruMemory.ToList()));
+            lru.Run(lruList.ToList());
             #endregion LRU
 
             #region Relogio
-            //var Relogio = new RelogioController(new RelogioService());
-            //Relogio.Run(entradas.ToList());
+            Console.WriteLine(" --------------------- Relogio -------------------------");
+
+            var rlgMemory = new List<string>
+            {
+                "0",
+                "0",
+                "0"
+            };
+
+            var rlgList = new List<string>
+            {
+                "A1",
+                "A2",
+                "A3",
+                "B2",
+                "B3",
+                "A1",
+                "B2",
+                "B3",
+                "A2",
+                "A1",
+            };
+            var Relogio = new RelogioController(new RelogioService(rlgMemory.ToList()));
+            Relogio.Run(rlgList.ToList());
             #endregion Relogio
 
             #region NRU
-            //var nru = new NRUController(new NRUService());
-            //var listAcess = new List<Acess>()
-            //{
-            //    Acess.CreateFrom(entradas[0], "E"),
-            //    Acess.CreateFrom(entradas[1], "L"),
-            //    Acess.CreateFrom(entradas[2], "L"),
-            //    Acess.CreateFrom(entradas[3], "L"),
-            //    Acess.CreateFrom(entradas[4], "L"),
-            //    Acess.CreateFrom(entradas[5], "L"),
-            //    Acess.CreateFrom(entradas[6], "L"),
-            //    Acess.CreateFrom(entradas[7], "L"),
-            //    Acess.CreateFrom(entradas[8], "L"),
-            //    Acess.CreateFrom(entradas[8], "E"),
-            //};
-            //nru.Run(listAcess);
+            Console.WriteLine(" --------------------- NRU -------------------------");
+
+            var nruMemory = new List<string>
+            {
+                "A1",
+                "A2",
+                "A3"
+            };
+
+            var nru = new NRUController(new NRUService(nruMemory.ToList()));
+            var nruList = new List<Acess>()
+            {
+                Acess.CreateFrom("A1", "E"),
+                Acess.CreateFrom("A2", "L"),
+                Acess.CreateFrom("B1", "L"),
+                Acess.CreateFrom("B2", "L"),
+                Acess.CreateFrom("B3", "L"),
+                Acess.CreateFrom("A1", "L"),
+                Acess.CreateFrom("B2", "L"),
+                Acess.CreateFrom("B3", "L"),
+                Acess.CreateFrom("A2", "L"),
+                Acess.CreateFrom("A1", "E"),
+            };
+            nru.Run(nruList.ToList());
             #endregion NRU
 
             #region WSClock
-            var listAcess = new List<Acess>()
+            Console.WriteLine(" --------------------- WSClock -------------------------");
+
+            var wsMemory = new List<string>
             {
-                Acess.CreateFrom(entradas[0], "E"),
-                Acess.CreateFrom(entradas[1], "L"),
-                Acess.CreateFrom(entradas[2], "L"),
-                Acess.CreateFrom(entradas[3], "L"),
-                Acess.CreateFrom(entradas[4], "L"),
-                Acess.CreateFrom(entradas[5], "L"),
-                Acess.CreateFrom(entradas[6], "L"),
-                Acess.CreateFrom(entradas[7], "L"),
-                Acess.CreateFrom(entradas[8], "L"),
-                Acess.CreateFrom(entradas[8], "E"),
+                "0",
+                "0",
+                "0"
             };
-            var wsClock = new WSClockController(new WSClockService(listAcess));
-            wsClock.Run(listAcess.ToList());
+
+            var wsList = new List<Acess>()
+            {
+                Acess.CreateFrom("A1", "E"),
+                Acess.CreateFrom("A2", "L"),
+                Acess.CreateFrom("B1", "L"),
+                Acess.CreateFrom("B2", "L"),
+                Acess.CreateFrom("A1", "L"),
+                Acess.CreateFrom("A1", "L"),
+                Acess.CreateFrom("B2", "L"),
+                Acess.CreateFrom("B3", "L"),
+                Acess.CreateFrom("A2", "L"),
+                Acess.CreateFrom("A1", "E"),
+            };                  
+            var wsClock = new WSClockController(new WSClockService(wsMemory.ToList(), wsList.ToList()));
+            wsClock.Run(wsList.ToList());
             #endregion WSClock
         }
     }

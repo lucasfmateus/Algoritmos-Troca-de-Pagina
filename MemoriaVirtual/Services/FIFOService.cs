@@ -7,9 +7,9 @@ namespace MemoriaVirtual.Services
 {
     public class FIFOService : ManagementService
     {
-        public FIFOService()
+        public FIFOService(List<string> memory)
         {
-            Initialize();
+            Initialize(memory);
         }
 
         public void AddNewPage(string page)

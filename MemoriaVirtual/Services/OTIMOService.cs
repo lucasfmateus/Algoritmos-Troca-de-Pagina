@@ -7,9 +7,9 @@ namespace MemoriaVirtual.Services
 {
     public class OTIMOService : ManagementService
     {
-        public OTIMOService()
+        public OTIMOService(List<string> memory)
         {
-            Initialize();
+            Initialize(memory);
         }
 
         public void AddNewPage(string page)

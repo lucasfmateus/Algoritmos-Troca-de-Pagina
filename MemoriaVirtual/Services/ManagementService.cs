@@ -19,12 +19,7 @@ namespace MemoriaVirtual.Services
 
         public List<string> ExecutionList = new List<string>();
 
-        public List<string> Memory = new List<string>
-        {
-            "0",
-            "0",
-            "0"
-        };
+        public List<string> Memory = new List<string>();
 
         public void Update()
         {
@@ -72,8 +67,10 @@ namespace MemoriaVirtual.Services
             }
         }
 
-        public virtual void Initialize()
+        public virtual void Initialize(List<string> memory)
         {
+            Memory = memory;
+
             Update();
 
             foreach (var item in Memory)
@@ -173,6 +170,9 @@ namespace MemoriaVirtual.Services
             {
                 Console.WriteLine("| " + item + " |");
             }
+
+            Console.WriteLine("\n ------------------------------------------------------------ \n");
+
         }
     }
 }

@@ -14,9 +14,9 @@ namespace MemoriaVirtual.Services
 
         public List<Acess> FilaControle = new List<Acess>();
 
-        public WSClockService(List<Acess> acess)
+        public WSClockService(List<string> memory, List<Acess> acess)
         {
-            Initialize();
+            Initialize(memory);
             Pages = acess;
             var l = Pages.Select(x => x.Page).ToList();
             Table = l.Concat(Memory.Where(x => x != "0").ToList()).ToList().Distinct().Select(x => WSClockTable.CreateFrom(x)).ToList();
@@ -45,6 +45,7 @@ namespace MemoriaVirtual.Services
                 OldValue = t.Page;
                 TradingPostion = Memory.IndexOf(OldValue);
                 Memory[TradingPostion] = NewValue;
+                Fila.Add(NewValue);
             },
             acess.Page);
 
@@ -116,6 +117,7 @@ namespace MemoriaVirtual.Services
                         }
                     }
                 }
+                
             }
 
             return ValidTrade(r);

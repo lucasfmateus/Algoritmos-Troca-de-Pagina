@@ -9,18 +9,18 @@ namespace MemoriaVirtual.Services
     {
         public List<List<string>> Matriz = new List<List<string>>();
 
-        public override void Initialize()
+        public override void Initialize(List<string> memory)
         {
-            base.Initialize();
+            base.Initialize(memory);
 
             var l = new List<string>();            
             Memory.ForEach(x => l.Add("0"));
             Memory.ForEach(x => Matriz.Add(l));
         }
 
-        public LRUService()
+        public LRUService(List<string> memory)
         {
-            Initialize();
+            Initialize(memory);
         }
 
 

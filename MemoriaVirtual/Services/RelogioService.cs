@@ -12,9 +12,9 @@ namespace MemoriaVirtual.Services
 
         public List<string> FilaControle = new List<string>();
 
-        public RelogioService()
+        public RelogioService(List<string> memory)
         {
-            Initialize();
+            Initialize(memory);
         }
 
         public void AddNewPage(string page)

@@ -11,9 +11,9 @@ namespace MemoriaVirtual.Services
 
         public List<Acess> FilaControle = new List<Acess>();
 
-        public NRUService()
+        public NRUService(List<string> memory)
         {
-            Initialize();
+            Initialize(memory);
         }
 
         public void AddNewPage(Acess acess)
